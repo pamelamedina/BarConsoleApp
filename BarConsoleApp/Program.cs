@@ -11,7 +11,10 @@ internal class Program
     //a Recipe (header) ,  Ingredient list , Instruction list.
     private static async Task Main(string[] args)
     {
-        Bar b = new Bar("Cheers!", Customer.GetCustomerList(), new Bartender("Brad"), new RecipeBuilder());
+        Bar a = new Bar("The Broken Keel Tavern");
+        await a.BarProcess(Customer.GetCustomerList(), new Bartender("Adam"), new RecipeBuilder());
+
+        Bar b = new Bar("Cheers ", Customer.GetCustomerList(), new Bartender("Brad"), new RecipeBuilder());
         await b.BarProcess();
         Console.ReadLine();
 
